@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class VidaJugador : MonoBehaviour
 {
-    [SerializeField] AudioSource deathSound;
+    
 
     bool dead = false;
 
