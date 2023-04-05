@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,16 +11,16 @@ public class ItemCollector : MonoBehaviour
 
 
     [SerializeField] Text coinsText;
-
+    [SerializeField] AudioSource CoinSound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            
+            CoinSound.Play();
             Destroy(other.gameObject);
             coins++;
             coinsText.text = "Coins: " + coins;
-
+            
         }
     }
 }

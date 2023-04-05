@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pared : MonoBehaviour
 {
@@ -31,13 +32,13 @@ public class Pared : MonoBehaviour
         Debug.Log(targetTime);
 
 
-        if (targetTime > 2)
+        if (targetTime > 0.1)
         {
             transform.rotation = Rotation;
             transform.position = Position;
             Debug.Log("Comienza el tiempo" + collision.gameObject.name);
             targetTime = 0;
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
 

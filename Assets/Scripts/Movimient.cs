@@ -9,9 +9,9 @@ public class Movimient : MonoBehaviour
     public float velocidadRotacion = 200.0f;
     private Animator anim;
     public float x, y;
-    
 
- [SerializeField] Transform groundCheck;
+    [SerializeField] AudioSource JumpSound;
+    [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
     Rigidbody rb;
 
@@ -40,6 +40,7 @@ public class Movimient : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, 5f, rb.velocity.z);
+            JumpSound.Play();
         }
 
        
